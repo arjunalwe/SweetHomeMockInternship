@@ -292,8 +292,11 @@ public class HomePane extends JRootPane implements HomeView {
   /**
    * Create the actions map of this component.
    */
+  /**
+   * Create the actions map of this component.
+   */
   private void createActions(Home home,
-                             UserPreferences preferences, 
+                             UserPreferences preferences,
                              final HomeController controller) {
     createAction(ActionType.NEW_HOME, preferences, controller, "newHome");
     createAction(ActionType.OPEN, preferences, controller, "open");
@@ -308,7 +311,7 @@ public class HomePane extends JRootPane implements HomeView {
     createAction(ActionType.PRINT_TO_PDF, preferences, controller, "printToPDF");
     createAction(ActionType.PREFERENCES, preferences, controller, "editPreferences");
     createAction(ActionType.EXIT, preferences, controller, "exit");
-    
+
     createAction(ActionType.UNDO, preferences, controller, "undo");
     createAction(ActionType.REDO, preferences, controller, "redo");
     createClipboardAction(ActionType.CUT, preferences, TransferHandler.getCutAction(), true);
@@ -318,7 +321,7 @@ public class HomePane extends JRootPane implements HomeView {
     createAction(ActionType.PASTE_STYLE, preferences, controller, "pasteStyle");
     createAction(ActionType.DELETE, preferences, controller, "delete");
     createAction(ActionType.SELECT_ALL, preferences, controller, "selectAll");
-    
+
     createAction(ActionType.ADD_HOME_FURNITURE, preferences, controller, "addHomeFurniture");
     createAction(ActionType.ADD_FURNITURE_TO_GROUP, preferences, controller, "addFurnitureToGroup");
     FurnitureController furnitureController = controller.getFurnitureController();
@@ -345,119 +348,120 @@ public class HomePane extends JRootPane implements HomeView {
     createAction(ActionType.IMPORT_FURNITURE_LIBRARY, preferences, controller, "importFurnitureLibrary");
     createAction(ActionType.IMPORT_TEXTURE, preferences, controller, "importTexture");
     createAction(ActionType.IMPORT_TEXTURES_LIBRARY, preferences, controller, "importTexturesLibrary");
-    createAction(ActionType.SORT_HOME_FURNITURE_BY_CATALOG_ID, preferences, 
-        furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.CATALOG_ID);
-    createAction(ActionType.SORT_HOME_FURNITURE_BY_NAME, preferences, 
-        furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.NAME);
-    createAction(ActionType.SORT_HOME_FURNITURE_BY_WIDTH, preferences, 
-        furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.WIDTH);
-    createAction(ActionType.SORT_HOME_FURNITURE_BY_DEPTH, preferences, 
-        furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.DEPTH);
-    createAction(ActionType.SORT_HOME_FURNITURE_BY_HEIGHT, preferences, 
-        furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.HEIGHT);
-    createAction(ActionType.SORT_HOME_FURNITURE_BY_X, preferences, 
-        furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.X);
-    createAction(ActionType.SORT_HOME_FURNITURE_BY_Y, preferences, 
-        furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.Y);
-    createAction(ActionType.SORT_HOME_FURNITURE_BY_ELEVATION, preferences, 
-        furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.ELEVATION);
-    createAction(ActionType.SORT_HOME_FURNITURE_BY_ANGLE, preferences, 
-        furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.ANGLE);
-    createAction(ActionType.SORT_HOME_FURNITURE_BY_LEVEL, preferences, 
-        furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.LEVEL);
-    createAction(ActionType.SORT_HOME_FURNITURE_BY_COLOR, preferences, 
-        furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.COLOR);
-    createAction(ActionType.SORT_HOME_FURNITURE_BY_TEXTURE, preferences, 
-        furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.TEXTURE);
-    createAction(ActionType.SORT_HOME_FURNITURE_BY_MOVABILITY, preferences, 
-        furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.MOVABLE);
-    createAction(ActionType.SORT_HOME_FURNITURE_BY_TYPE, preferences, 
-        furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.DOOR_OR_WINDOW);
-    createAction(ActionType.SORT_HOME_FURNITURE_BY_VISIBILITY, preferences, 
-        furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.VISIBLE);
-    createAction(ActionType.SORT_HOME_FURNITURE_BY_PRICE, preferences, 
-        furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.PRICE);
-    createAction(ActionType.SORT_HOME_FURNITURE_BY_VALUE_ADDED_TAX_PERCENTAGE, preferences, 
-        furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.VALUE_ADDED_TAX_PERCENTAGE);
-    createAction(ActionType.SORT_HOME_FURNITURE_BY_VALUE_ADDED_TAX, preferences, 
-        furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.VALUE_ADDED_TAX);
-    createAction(ActionType.SORT_HOME_FURNITURE_BY_PRICE_VALUE_ADDED_TAX_INCLUDED, preferences, 
-        furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.PRICE_VALUE_ADDED_TAX_INCLUDED);
-    createAction(ActionType.SORT_HOME_FURNITURE_BY_DESCENDING_ORDER, preferences, 
-        furnitureController, "toggleFurnitureSortOrder");
-    createAction(ActionType.DISPLAY_HOME_FURNITURE_CATALOG_ID, preferences, 
-        furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.CATALOG_ID);
-    createAction(ActionType.DISPLAY_HOME_FURNITURE_NAME, preferences, 
-        furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.NAME);
-    createAction(ActionType.DISPLAY_HOME_FURNITURE_WIDTH, preferences, 
-        furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.WIDTH);
-    createAction(ActionType.DISPLAY_HOME_FURNITURE_DEPTH, preferences, 
-        furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.DEPTH);
-    createAction(ActionType.DISPLAY_HOME_FURNITURE_HEIGHT, preferences, 
-        furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.HEIGHT);
-    createAction(ActionType.DISPLAY_HOME_FURNITURE_X, preferences, 
-        furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.X);
-    createAction(ActionType.DISPLAY_HOME_FURNITURE_Y, preferences, 
-        furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.Y);
-    createAction(ActionType.DISPLAY_HOME_FURNITURE_ELEVATION, preferences, 
-        furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.ELEVATION);
-    createAction(ActionType.DISPLAY_HOME_FURNITURE_ANGLE, preferences, 
-        furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.ANGLE);
-    createAction(ActionType.DISPLAY_HOME_FURNITURE_LEVEL, preferences, 
-        furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.LEVEL);
-    createAction(ActionType.DISPLAY_HOME_FURNITURE_COLOR, preferences, 
-        furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.COLOR);
-    createAction(ActionType.DISPLAY_HOME_FURNITURE_TEXTURE, preferences, 
-        furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.TEXTURE);
-    createAction(ActionType.DISPLAY_HOME_FURNITURE_MOVABLE, preferences, 
-        furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.MOVABLE);
-    createAction(ActionType.DISPLAY_HOME_FURNITURE_DOOR_OR_WINDOW, preferences, 
-        furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.DOOR_OR_WINDOW);
-    createAction(ActionType.DISPLAY_HOME_FURNITURE_VISIBLE, preferences, 
-        furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.VISIBLE);
-    createAction(ActionType.DISPLAY_HOME_FURNITURE_PRICE, preferences, 
-        furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.PRICE);
-    createAction(ActionType.DISPLAY_HOME_FURNITURE_VALUE_ADDED_TAX_PERCENTAGE, preferences, 
-        furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.VALUE_ADDED_TAX_PERCENTAGE);
-    createAction(ActionType.DISPLAY_HOME_FURNITURE_VALUE_ADDED_TAX, preferences, 
-        furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.VALUE_ADDED_TAX);
-    createAction(ActionType.DISPLAY_HOME_FURNITURE_PRICE_VALUE_ADDED_TAX_INCLUDED, preferences, 
-        furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.PRICE_VALUE_ADDED_TAX_INCLUDED);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_CATALOG_ID, preferences,
+            furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.CATALOG_ID);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_NAME, preferences,
+            furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.NAME);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_WIDTH, preferences,
+            furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.WIDTH);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_DEPTH, preferences,
+            furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.DEPTH);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_HEIGHT, preferences,
+            furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.HEIGHT);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_VOLUME, preferences,
+            furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.VOLUME);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_X, preferences,
+            furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.X);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_Y, preferences,
+            furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.Y);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_ELEVATION, preferences,
+            furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.ELEVATION);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_ANGLE, preferences,
+            furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.ANGLE);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_LEVEL, preferences,
+            furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.LEVEL);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_COLOR, preferences,
+            furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.COLOR);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_TEXTURE, preferences,
+            furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.TEXTURE);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_MOVABILITY, preferences,
+            furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.MOVABLE);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_TYPE, preferences,
+            furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.DOOR_OR_WINDOW);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_VISIBILITY, preferences,
+            furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.VISIBLE);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_PRICE, preferences,
+            furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.PRICE);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_VALUE_ADDED_TAX_PERCENTAGE, preferences,
+            furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.VALUE_ADDED_TAX_PERCENTAGE);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_VALUE_ADDED_TAX, preferences,
+            furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.VALUE_ADDED_TAX);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_PRICE_VALUE_ADDED_TAX_INCLUDED, preferences,
+            furnitureController, "toggleFurnitureSort", HomePieceOfFurniture.SortableProperty.PRICE_VALUE_ADDED_TAX_INCLUDED);
+    createAction(ActionType.SORT_HOME_FURNITURE_BY_DESCENDING_ORDER, preferences,
+            furnitureController, "toggleFurnitureSortOrder");
+    createAction(ActionType.DISPLAY_HOME_FURNITURE_CATALOG_ID, preferences,
+            furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.CATALOG_ID);
+    createAction(ActionType.DISPLAY_HOME_FURNITURE_NAME, preferences,
+            furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.NAME);
+    createAction(ActionType.DISPLAY_HOME_FURNITURE_WIDTH, preferences,
+            furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.WIDTH);
+    createAction(ActionType.DISPLAY_HOME_FURNITURE_DEPTH, preferences,
+            furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.DEPTH);
+    createAction(ActionType.DISPLAY_HOME_FURNITURE_HEIGHT, preferences,
+            furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.HEIGHT);
+    createAction(ActionType.DISPLAY_HOME_FURNITURE_VOLUME, preferences,
+            furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.VOLUME);
+    createAction(ActionType.DISPLAY_HOME_FURNITURE_X, preferences,
+            furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.X);
+    createAction(ActionType.DISPLAY_HOME_FURNITURE_Y, preferences,
+            furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.Y);
+    createAction(ActionType.DISPLAY_HOME_FURNITURE_ELEVATION, preferences,
+            furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.ELEVATION);
+    createAction(ActionType.DISPLAY_HOME_FURNITURE_ANGLE, preferences,
+            furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.ANGLE);
+    createAction(ActionType.DISPLAY_HOME_FURNITURE_LEVEL, preferences,
+            furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.LEVEL);
+    createAction(ActionType.DISPLAY_HOME_FURNITURE_COLOR, preferences,
+            furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.COLOR);
+    createAction(ActionType.DISPLAY_HOME_FURNITURE_TEXTURE, preferences,
+            furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.TEXTURE);
+    createAction(ActionType.DISPLAY_HOME_FURNITURE_MOVABLE, preferences,
+            furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.MOVABLE);
+    createAction(ActionType.DISPLAY_HOME_FURNITURE_DOOR_OR_WINDOW, preferences,
+            furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.DOOR_OR_WINDOW);
+    createAction(ActionType.DISPLAY_HOME_FURNITURE_VISIBLE, preferences,
+            furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.VISIBLE);
+    createAction(ActionType.DISPLAY_HOME_FURNITURE_PRICE, preferences,
+            furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.PRICE);
+    createAction(ActionType.DISPLAY_HOME_FURNITURE_VALUE_ADDED_TAX_PERCENTAGE, preferences,
+            furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.VALUE_ADDED_TAX_PERCENTAGE);
+    createAction(ActionType.DISPLAY_HOME_FURNITURE_VALUE_ADDED_TAX, preferences,
+            furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.VALUE_ADDED_TAX);
+    createAction(ActionType.DISPLAY_HOME_FURNITURE_PRICE_VALUE_ADDED_TAX_INCLUDED, preferences,
+            furnitureController, "toggleFurnitureVisibleProperty", HomePieceOfFurniture.SortableProperty.PRICE_VALUE_ADDED_TAX_INCLUDED);
     createAction(ActionType.EXPORT_TO_CSV, preferences, controller, "exportToCSV");
-    
+
     PlanController planController = controller.getPlanController();
     if (planController.getView() != null) {
-      createAction(ActionType.SELECT_ALL_AT_ALL_LEVELS, preferences, planController, "selectAllAtAllLevels"); 
+      createAction(ActionType.SELECT_ALL_AT_ALL_LEVELS, preferences, planController, "selectAllAtAllLevels");
       ButtonGroup modeGroup = new ButtonGroup();
-      createToggleAction(ActionType.SELECT, planController.getMode() == PlanController.Mode.SELECTION, modeGroup, 
-          preferences, controller, "setMode", PlanController.Mode.SELECTION);
-      createToggleAction(ActionType.PAN, planController.getMode() == PlanController.Mode.PANNING, modeGroup, 
-          preferences, controller, "setMode", PlanController.Mode.PANNING);
-      createToggleAction(ActionType.CREATE_WALLS, planController.getMode() == PlanController.Mode.WALL_CREATION, modeGroup, 
-          preferences, controller, "setMode", PlanController.Mode.WALL_CREATION);
-      createToggleAction(ActionType.CREATE_ROOMS, planController.getMode() == PlanController.Mode.ROOM_CREATION, modeGroup, 
-          preferences, controller, "setMode", PlanController.Mode.ROOM_CREATION);
-      createToggleAction(ActionType.CREATE_POLYLINES, planController.getMode() == PlanController.Mode.POLYLINE_CREATION, modeGroup, 
-          preferences, controller, "setMode", PlanController.Mode.POLYLINE_CREATION);
-      createToggleAction(ActionType.CREATE_DIMENSION_LINES, planController.getMode() == PlanController.Mode.DIMENSION_LINE_CREATION, modeGroup, 
-          preferences, controller, "setMode", PlanController.Mode.DIMENSION_LINE_CREATION);
-      createToggleAction(ActionType.CREATE_LABELS, planController.getMode() == PlanController.Mode.LABEL_CREATION, modeGroup, 
-          preferences, controller, "setMode", PlanController.Mode.LABEL_CREATION);
+      createToggleAction(ActionType.SELECT, planController.getMode() == PlanController.Mode.SELECTION, modeGroup,
+              preferences, controller, "setMode", PlanController.Mode.SELECTION);
+      createToggleAction(ActionType.PAN, planController.getMode() == PlanController.Mode.PANNING, modeGroup,
+              preferences, controller, "setMode", PlanController.Mode.PANNING);
+      createToggleAction(ActionType.CREATE_WALLS, planController.getMode() == PlanController.Mode.WALL_CREATION, modeGroup,
+              preferences, controller, "setMode", PlanController.Mode.WALL_CREATION);
+      createToggleAction(ActionType.CREATE_ROOMS, planController.getMode() == PlanController.Mode.ROOM_CREATION, modeGroup,
+              preferences, controller, "setMode", PlanController.Mode.ROOM_CREATION);
+      createToggleAction(ActionType.CREATE_POLYLINES, planController.getMode() == PlanController.Mode.POLYLINE_CREATION, modeGroup,
+              preferences, controller, "setMode", PlanController.Mode.POLYLINE_CREATION);
+      createToggleAction(ActionType.CREATE_DIMENSION_LINES, planController.getMode() == PlanController.Mode.DIMENSION_LINE_CREATION, modeGroup,
+              preferences, controller, "setMode", PlanController.Mode.DIMENSION_LINE_CREATION);
+      createToggleAction(ActionType.CREATE_LABELS, planController.getMode() == PlanController.Mode.LABEL_CREATION, modeGroup,
+              preferences, controller, "setMode", PlanController.Mode.LABEL_CREATION);
       createAction(ActionType.DELETE_SELECTION, preferences, planController, "deleteSelection");
       createAction(ActionType.LOCK_BASE_PLAN, preferences, planController, "lockBasePlan");
       createAction(ActionType.UNLOCK_BASE_PLAN, preferences, planController, "unlockBasePlan");
       createAction(ActionType.MODIFY_COMPASS, preferences, planController, "modifyCompass");
       createAction(ActionType.MODIFY_WALL, preferences, planController, "modifySelectedWalls");
       createAction(ActionType.MODIFY_ROOM, preferences, planController, "modifySelectedRooms");
-      // ADD_ROOM_POINT and DELETE_ROOM_POINT actions are actually defined later in updateRoomActions  
       createAction(ActionType.ADD_ROOM_POINT, preferences);
       createAction(ActionType.DELETE_ROOM_POINT, preferences);
       createAction(ActionType.MODIFY_POLYLINE, preferences, planController, "modifySelectedPolylines");
       createAction(ActionType.MODIFY_LABEL, preferences, planController, "modifySelectedLabels");
       createAction(ActionType.INCREASE_TEXT_SIZE, preferences, planController, "increaseTextSize");
       createAction(ActionType.DECREASE_TEXT_SIZE, preferences, planController, "decreaseTextSize");
-      // Use special toggle models for bold and italic check box menu items and tool bar buttons 
-      // that are selected texts in home selected items are all bold or italic
       Action toggleBoldAction = createAction(ActionType.TOGGLE_BOLD_STYLE, preferences, planController, "toggleBoldStyle");
       toggleBoldAction.putValue(ResourceAction.TOGGLE_BUTTON_MODEL, createBoldStyleToggleModel(home, preferences));
       Action toggleItalicAction = createAction(ActionType.TOGGLE_ITALIC_STYLE, preferences, planController, "toggleItalicStyle");
@@ -479,48 +483,47 @@ public class HomePane extends JRootPane implements HomeView {
       createAction(ActionType.ZOOM_OUT, preferences, controller, "zoomOut");
       createAction(ActionType.EXPORT_TO_SVG, preferences, controller, "exportToSVG");
     }
-    
+
     if (homeController3D.getView() != null) {
       ButtonGroup viewGroup = new ButtonGroup();
-      createToggleAction(ActionType.VIEW_FROM_TOP, home.getCamera() == home.getTopCamera(), viewGroup, 
-          preferences, homeController3D, "viewFromTop");
-      createToggleAction(ActionType.VIEW_FROM_OBSERVER, home.getCamera() == home.getObserverCamera(), viewGroup, 
-          preferences, homeController3D, "viewFromObserver");
+      createToggleAction(ActionType.VIEW_FROM_TOP, home.getCamera() == home.getTopCamera(), viewGroup,
+              preferences, homeController3D, "viewFromTop");
+      createToggleAction(ActionType.VIEW_FROM_OBSERVER, home.getCamera() == home.getObserverCamera(), viewGroup,
+              preferences, homeController3D, "viewFromObserver");
       createAction(ActionType.MODIFY_OBSERVER, preferences, planController, "modifyObserverCamera");
       createAction(ActionType.STORE_POINT_OF_VIEW, preferences, controller, "storeCamera");
       createAction(ActionType.DELETE_POINTS_OF_VIEW, preferences, controller, "deleteCameras");
-      getActionMap().put(ActionType.DETACH_3D_VIEW, 
-          new ResourceAction(preferences, HomePane.class, ActionType.DETACH_3D_VIEW.name()) {
-            @Override
-            public void actionPerformed(ActionEvent ev) {
-              controller.detachView(homeController3D.getView());
-            }
-          });
-      getActionMap().put(ActionType.ATTACH_3D_VIEW, 
-          new ResourceAction(preferences, HomePane.class, ActionType.ATTACH_3D_VIEW.name()) {
-            @Override
-            public void actionPerformed(ActionEvent ev) {
-              controller.attachView(homeController3D.getView());
-            }
-          });
+      getActionMap().put(ActionType.DETACH_3D_VIEW,
+              new ResourceAction(preferences, HomePane.class, ActionType.DETACH_3D_VIEW.name()) {
+                @Override
+                public void actionPerformed(ActionEvent ev) {
+                  controller.detachView(homeController3D.getView());
+                }
+              });
+      getActionMap().put(ActionType.ATTACH_3D_VIEW,
+              new ResourceAction(preferences, HomePane.class, ActionType.ATTACH_3D_VIEW.name()) {
+                @Override
+                public void actionPerformed(ActionEvent ev) {
+                  controller.attachView(homeController3D.getView());
+                }
+              });
 
       ButtonGroup displayLevelGroup = new ButtonGroup();
       boolean allLevelsVisible = home.getEnvironment().isAllLevelsVisible();
-      createToggleAction(ActionType.DISPLAY_ALL_LEVELS, allLevelsVisible, displayLevelGroup, preferences, 
-          homeController3D, "displayAllLevels");
-      createToggleAction(ActionType.DISPLAY_SELECTED_LEVEL, !allLevelsVisible, displayLevelGroup, preferences, 
-          homeController3D, "displaySelectedLevel");
+      createToggleAction(ActionType.DISPLAY_ALL_LEVELS, allLevelsVisible, displayLevelGroup, preferences,
+              homeController3D, "displayAllLevels");
+      createToggleAction(ActionType.DISPLAY_SELECTED_LEVEL, !allLevelsVisible, displayLevelGroup, preferences,
+              homeController3D, "displaySelectedLevel");
       createAction(ActionType.MODIFY_3D_ATTRIBUTES, preferences, homeController3D, "modifyAttributes");
       createAction(ActionType.CREATE_PHOTO, preferences, controller, "createPhoto");
       createAction(ActionType.CREATE_PHOTOS_AT_POINTS_OF_VIEW, preferences, controller, "createPhotos");
       createAction(ActionType.CREATE_VIDEO, preferences, controller, "createVideo");
       createAction(ActionType.EXPORT_TO_OBJ, preferences, controller, "exportToOBJ");
     }
-    
+
     createAction(ActionType.HELP, preferences, controller, "help");
     createAction(ActionType.ABOUT, preferences, controller, "about");
   }
-
   /**
    * Returns a new <code>ControllerAction</code> object that calls on <code>controller</code> a given
    * <code>method</code> with its <code>parameters</code>. This action is added to the action map of this component.
@@ -1305,71 +1308,68 @@ public class HomePane extends JRootPane implements HomeView {
   /**
    * Returns furniture sort menu.
    */
+  /**
+   * Returns furniture sort menu.
+   */
   private JMenu createFurnitureSortMenu(final Home home, UserPreferences preferences) {
-    // Create Furniture Sort submenu
     JMenu sortMenu = new JMenu(this.menuActionMap.get(MenuActionType.SORT_HOME_FURNITURE_MENU));
-    // Map sort furniture properties to sort actions
-    Map<HomePieceOfFurniture.SortableProperty, Action> sortActions = 
-        new LinkedHashMap<HomePieceOfFurniture.SortableProperty, Action>();     
-    // Use catalog id if currency isn't null
+    Map<HomePieceOfFurniture.SortableProperty, Action> sortActions =
+            new LinkedHashMap<HomePieceOfFurniture.SortableProperty, Action>();
     if (preferences.getCurrency() != null) {
-      addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_CATALOG_ID, 
-          sortActions, HomePieceOfFurniture.SortableProperty.CATALOG_ID); 
+      addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_CATALOG_ID,
+              sortActions, HomePieceOfFurniture.SortableProperty.CATALOG_ID);
     }
-    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_NAME, 
-        sortActions, HomePieceOfFurniture.SortableProperty.NAME); 
-    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_WIDTH, 
-        sortActions, HomePieceOfFurniture.SortableProperty.WIDTH);
-    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_DEPTH, 
-        sortActions, HomePieceOfFurniture.SortableProperty.DEPTH);
-    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_HEIGHT, 
-        sortActions, HomePieceOfFurniture.SortableProperty.HEIGHT);
-    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_X, 
-        sortActions, HomePieceOfFurniture.SortableProperty.X);
-    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_Y, 
-        sortActions, HomePieceOfFurniture.SortableProperty.Y);
-    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_ELEVATION, 
-        sortActions, HomePieceOfFurniture.SortableProperty.ELEVATION);
-    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_ANGLE, 
-        sortActions, HomePieceOfFurniture.SortableProperty.ANGLE);
-    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_LEVEL, 
-        sortActions, HomePieceOfFurniture.SortableProperty.LEVEL);
-    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_COLOR, 
-        sortActions, HomePieceOfFurniture.SortableProperty.COLOR);
-    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_TEXTURE, 
-        sortActions, HomePieceOfFurniture.SortableProperty.TEXTURE);
-    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_MOVABILITY, 
-        sortActions, HomePieceOfFurniture.SortableProperty.MOVABLE);
-    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_TYPE, 
-        sortActions, HomePieceOfFurniture.SortableProperty.DOOR_OR_WINDOW);
-    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_VISIBILITY, 
-        sortActions, HomePieceOfFurniture.SortableProperty.VISIBLE);
-    // Use prices if currency isn't null
+    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_NAME,
+            sortActions, HomePieceOfFurniture.SortableProperty.NAME);
+    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_WIDTH,
+            sortActions, HomePieceOfFurniture.SortableProperty.WIDTH);
+    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_DEPTH,
+            sortActions, HomePieceOfFurniture.SortableProperty.DEPTH);
+    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_HEIGHT,
+            sortActions, HomePieceOfFurniture.SortableProperty.HEIGHT);
+    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_VOLUME,
+            sortActions, HomePieceOfFurniture.SortableProperty.VOLUME);
+    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_X,
+            sortActions, HomePieceOfFurniture.SortableProperty.X);
+    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_Y,
+            sortActions, HomePieceOfFurniture.SortableProperty.Y);
+    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_ELEVATION,
+            sortActions, HomePieceOfFurniture.SortableProperty.ELEVATION);
+    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_ANGLE,
+            sortActions, HomePieceOfFurniture.SortableProperty.ANGLE);
+    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_LEVEL,
+            sortActions, HomePieceOfFurniture.SortableProperty.LEVEL);
+    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_COLOR,
+            sortActions, HomePieceOfFurniture.SortableProperty.COLOR);
+    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_TEXTURE,
+            sortActions, HomePieceOfFurniture.SortableProperty.TEXTURE);
+    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_MOVABILITY,
+            sortActions, HomePieceOfFurniture.SortableProperty.MOVABLE);
+    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_TYPE,
+            sortActions, HomePieceOfFurniture.SortableProperty.DOOR_OR_WINDOW);
+    addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_VISIBILITY,
+            sortActions, HomePieceOfFurniture.SortableProperty.VISIBLE);
     if (preferences.getCurrency() != null) {
-      addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_PRICE, 
-          sortActions, HomePieceOfFurniture.SortableProperty.PRICE);
-      addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_VALUE_ADDED_TAX_PERCENTAGE, 
-          sortActions, HomePieceOfFurniture.SortableProperty.VALUE_ADDED_TAX_PERCENTAGE);
-      addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_VALUE_ADDED_TAX, 
-          sortActions, HomePieceOfFurniture.SortableProperty.VALUE_ADDED_TAX);
-      addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_PRICE_VALUE_ADDED_TAX_INCLUDED, 
-          sortActions, HomePieceOfFurniture.SortableProperty.PRICE_VALUE_ADDED_TAX_INCLUDED);
+      addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_PRICE,
+              sortActions, HomePieceOfFurniture.SortableProperty.PRICE);
+      addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_VALUE_ADDED_TAX_PERCENTAGE,
+              sortActions, HomePieceOfFurniture.SortableProperty.VALUE_ADDED_TAX_PERCENTAGE);
+      addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_VALUE_ADDED_TAX,
+              sortActions, HomePieceOfFurniture.SortableProperty.VALUE_ADDED_TAX);
+      addActionToMap(ActionType.SORT_HOME_FURNITURE_BY_PRICE_VALUE_ADDED_TAX_INCLUDED,
+              sortActions, HomePieceOfFurniture.SortableProperty.PRICE_VALUE_ADDED_TAX_INCLUDED);
     }
-    // Add radio button menu items to sub menu and make them share the same radio button group
     ButtonGroup sortButtonGroup = new ButtonGroup();
     for (Map.Entry<HomePieceOfFurniture.SortableProperty, Action> entry : sortActions.entrySet()) {
       final HomePieceOfFurniture.SortableProperty furnitureProperty = entry.getKey();
       Action sortAction = entry.getValue();
       JRadioButtonMenuItem sortMenuItem = new JRadioButtonMenuItem();
-      // Use a special model for sort radio button menu item that is selected if
-      // home is sorted on furnitureProperty criterion
       sortMenuItem.setModel(new JToggleButton.ToggleButtonModel() {
-          @Override
-          public boolean isSelected() {
-            return furnitureProperty == home.getFurnitureSortedProperty();
-          }
-        }); 
-      // Configure check box menu item action after setting its model to avoid losing its mnemonic
+        @Override
+        public boolean isSelected() {
+          return furnitureProperty == home.getFurnitureSortedProperty();
+        }
+      });
       sortMenuItem.setAction(new ResourceAction.MenuItemAction(sortAction));
       sortMenu.add(sortMenuItem);
       sortButtonGroup.add(sortMenuItem);
@@ -1378,14 +1378,12 @@ public class HomePane extends JRootPane implements HomeView {
     if (sortOrderAction.getValue(Action.NAME) != null) {
       sortMenu.addSeparator();
       JCheckBoxMenuItem sortOrderCheckBoxMenuItem = new JCheckBoxMenuItem();
-      // Use a special model for sort order check box menu item that is selected depending on
-      // home sort order property
       sortOrderCheckBoxMenuItem.setModel(new JToggleButton.ToggleButtonModel() {
-          @Override
-          public boolean isSelected() {
-            return home.isFurnitureDescendingSorted();
-          }
-        });
+        @Override
+        public boolean isSelected() {
+          return home.isFurnitureDescendingSorted();
+        }
+      });
       sortOrderCheckBoxMenuItem.setAction(new ResourceAction.MenuItemAction(sortOrderAction));
       sortMenu.add(sortOrderCheckBoxMenuItem);
     }
@@ -1407,77 +1405,73 @@ public class HomePane extends JRootPane implements HomeView {
   /**
    * Returns furniture display property menu.
    */
+  /**
+   * Returns furniture display property menu.
+   */
   private JMenu createFurnitureDisplayPropertyMenu(final Home home, UserPreferences preferences) {
-    // Create Furniture Display property submenu
     JMenu displayPropertyMenu = new JMenu(
-        this.menuActionMap.get(MenuActionType.DISPLAY_HOME_FURNITURE_PROPERTY_MENU));
-    // Map displayProperty furniture properties to displayProperty actions
-    Map<HomePieceOfFurniture.SortableProperty, Action> displayPropertyActions = 
-        new LinkedHashMap<HomePieceOfFurniture.SortableProperty, Action>(); 
-    // Use catalog id if currency isn't null
+            this.menuActionMap.get(MenuActionType.DISPLAY_HOME_FURNITURE_PROPERTY_MENU));
+    Map<HomePieceOfFurniture.SortableProperty, Action> displayPropertyActions =
+            new LinkedHashMap<HomePieceOfFurniture.SortableProperty, Action>();
     if (preferences.getCurrency() != null) {
-      addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_CATALOG_ID, 
-          displayPropertyActions, HomePieceOfFurniture.SortableProperty.CATALOG_ID); 
+      addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_CATALOG_ID,
+              displayPropertyActions, HomePieceOfFurniture.SortableProperty.CATALOG_ID);
     }
-    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_NAME, 
-        displayPropertyActions, HomePieceOfFurniture.SortableProperty.NAME); 
-    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_WIDTH, 
-        displayPropertyActions, HomePieceOfFurniture.SortableProperty.WIDTH);
-    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_DEPTH, 
-        displayPropertyActions, HomePieceOfFurniture.SortableProperty.DEPTH);
-    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_HEIGHT, 
-        displayPropertyActions, HomePieceOfFurniture.SortableProperty.HEIGHT);
-    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_X, 
-        displayPropertyActions, HomePieceOfFurniture.SortableProperty.X);
-    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_Y, 
-        displayPropertyActions, HomePieceOfFurniture.SortableProperty.Y);
-    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_ELEVATION, 
-        displayPropertyActions, HomePieceOfFurniture.SortableProperty.ELEVATION);
-    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_ANGLE, 
-        displayPropertyActions, HomePieceOfFurniture.SortableProperty.ANGLE);
-    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_LEVEL, 
-        displayPropertyActions, HomePieceOfFurniture.SortableProperty.LEVEL);
-    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_COLOR, 
-        displayPropertyActions, HomePieceOfFurniture.SortableProperty.COLOR);
-    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_TEXTURE, 
-        displayPropertyActions, HomePieceOfFurniture.SortableProperty.TEXTURE);
-    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_MOVABLE, 
-        displayPropertyActions, HomePieceOfFurniture.SortableProperty.MOVABLE);
-    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_DOOR_OR_WINDOW, 
-        displayPropertyActions, HomePieceOfFurniture.SortableProperty.DOOR_OR_WINDOW);
-    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_VISIBLE, 
-        displayPropertyActions, HomePieceOfFurniture.SortableProperty.VISIBLE);
-    // Use prices if currency isn't null
+    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_NAME,
+            displayPropertyActions, HomePieceOfFurniture.SortableProperty.NAME);
+    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_WIDTH,
+            displayPropertyActions, HomePieceOfFurniture.SortableProperty.WIDTH);
+    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_DEPTH,
+            displayPropertyActions, HomePieceOfFurniture.SortableProperty.DEPTH);
+    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_HEIGHT,
+            displayPropertyActions, HomePieceOfFurniture.SortableProperty.HEIGHT);
+    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_VOLUME,
+            displayPropertyActions, HomePieceOfFurniture.SortableProperty.VOLUME);
+    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_X,
+            displayPropertyActions, HomePieceOfFurniture.SortableProperty.X);
+    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_Y,
+            displayPropertyActions, HomePieceOfFurniture.SortableProperty.Y);
+    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_ELEVATION,
+            displayPropertyActions, HomePieceOfFurniture.SortableProperty.ELEVATION);
+    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_ANGLE,
+            displayPropertyActions, HomePieceOfFurniture.SortableProperty.ANGLE);
+    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_LEVEL,
+            displayPropertyActions, HomePieceOfFurniture.SortableProperty.LEVEL);
+    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_COLOR,
+            displayPropertyActions, HomePieceOfFurniture.SortableProperty.COLOR);
+    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_TEXTURE,
+            displayPropertyActions, HomePieceOfFurniture.SortableProperty.TEXTURE);
+    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_MOVABLE,
+            displayPropertyActions, HomePieceOfFurniture.SortableProperty.MOVABLE);
+    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_DOOR_OR_WINDOW,
+            displayPropertyActions, HomePieceOfFurniture.SortableProperty.DOOR_OR_WINDOW);
+    addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_VISIBLE,
+            displayPropertyActions, HomePieceOfFurniture.SortableProperty.VISIBLE);
     if (preferences.getCurrency() != null) {
-      addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_PRICE, 
-          displayPropertyActions, HomePieceOfFurniture.SortableProperty.PRICE);
-      addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_VALUE_ADDED_TAX_PERCENTAGE, 
-          displayPropertyActions, HomePieceOfFurniture.SortableProperty.VALUE_ADDED_TAX_PERCENTAGE);
-      addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_VALUE_ADDED_TAX, 
-          displayPropertyActions, HomePieceOfFurniture.SortableProperty.VALUE_ADDED_TAX);
-      addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_PRICE_VALUE_ADDED_TAX_INCLUDED, 
-          displayPropertyActions, HomePieceOfFurniture.SortableProperty.PRICE_VALUE_ADDED_TAX_INCLUDED);
+      addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_PRICE,
+              displayPropertyActions, HomePieceOfFurniture.SortableProperty.PRICE);
+      addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_VALUE_ADDED_TAX_PERCENTAGE,
+              displayPropertyActions, HomePieceOfFurniture.SortableProperty.VALUE_ADDED_TAX_PERCENTAGE);
+      addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_VALUE_ADDED_TAX,
+              displayPropertyActions, HomePieceOfFurniture.SortableProperty.VALUE_ADDED_TAX);
+      addActionToMap(ActionType.DISPLAY_HOME_FURNITURE_PRICE_VALUE_ADDED_TAX_INCLUDED,
+              displayPropertyActions, HomePieceOfFurniture.SortableProperty.PRICE_VALUE_ADDED_TAX_INCLUDED);
     }
-    // Add radio button menu items to sub menu 
     for (Map.Entry<HomePieceOfFurniture.SortableProperty, Action> entry : displayPropertyActions.entrySet()) {
       final HomePieceOfFurniture.SortableProperty furnitureProperty = entry.getKey();
       Action displayPropertyAction = entry.getValue();
       JCheckBoxMenuItem displayPropertyMenuItem = new JCheckBoxMenuItem();
-      // Use a special model for displayProperty check box menu item that is selected if
-      // home furniture visible properties contains furnitureProperty
       displayPropertyMenuItem.setModel(new JToggleButton.ToggleButtonModel() {
-          @Override
-          public boolean isSelected() {
-            return home.getFurnitureVisibleProperties().contains(furnitureProperty);
-          }
-        }); 
-      // Configure check box menu item action after setting its model to avoid losing its mnemonic
+        @Override
+        public boolean isSelected() {
+          return home.getFurnitureVisibleProperties().contains(furnitureProperty);
+        }
+      });
       displayPropertyMenuItem.setAction(displayPropertyAction);
       displayPropertyMenu.add(displayPropertyMenuItem);
     }
     return displayPropertyMenu;
   }
-  
   /**
    * Returns Lock / Unlock base plan menu item.
    */

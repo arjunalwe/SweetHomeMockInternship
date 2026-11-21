@@ -230,13 +230,16 @@ public class HomeController implements Controller {
   /**
    * Enables actions at controller instantiation. 
    */
+  /**
+   * Enables actions at controller instantiation.
+   */
   private void enableDefaultActions(HomeView homeView) {
     boolean applicationExists = this.application != null;
-    
+
     homeView.setEnabled(HomeView.ActionType.NEW_HOME, applicationExists);
     homeView.setEnabled(HomeView.ActionType.OPEN, applicationExists);
-    homeView.setEnabled(HomeView.ActionType.DELETE_RECENT_HOMES, 
-        applicationExists && !this.preferences.getRecentHomes().isEmpty());
+    homeView.setEnabled(HomeView.ActionType.DELETE_RECENT_HOMES,
+            applicationExists && !this.preferences.getRecentHomes().isEmpty());
     homeView.setEnabled(HomeView.ActionType.CLOSE, applicationExists);
     homeView.setEnabled(HomeView.ActionType.SAVE, applicationExists);
     homeView.setEnabled(HomeView.ActionType.SAVE_AS, applicationExists);
@@ -256,6 +259,7 @@ public class HomeController implements Controller {
     homeView.setEnabled(HomeView.ActionType.SORT_HOME_FURNITURE_BY_WIDTH, true);
     homeView.setEnabled(HomeView.ActionType.SORT_HOME_FURNITURE_BY_HEIGHT, true);
     homeView.setEnabled(HomeView.ActionType.SORT_HOME_FURNITURE_BY_DEPTH, true);
+    homeView.setEnabled(HomeView.ActionType.SORT_HOME_FURNITURE_BY_VOLUME, true);
     homeView.setEnabled(HomeView.ActionType.SORT_HOME_FURNITURE_BY_X, true);
     homeView.setEnabled(HomeView.ActionType.SORT_HOME_FURNITURE_BY_Y, true);
     homeView.setEnabled(HomeView.ActionType.SORT_HOME_FURNITURE_BY_ELEVATION, true);
@@ -270,22 +274,23 @@ public class HomeController implements Controller {
     homeView.setEnabled(HomeView.ActionType.SORT_HOME_FURNITURE_BY_VALUE_ADDED_TAX_PERCENTAGE, true);
     homeView.setEnabled(HomeView.ActionType.SORT_HOME_FURNITURE_BY_VALUE_ADDED_TAX, true);
     homeView.setEnabled(HomeView.ActionType.SORT_HOME_FURNITURE_BY_PRICE_VALUE_ADDED_TAX_INCLUDED, true);
-    homeView.setEnabled(HomeView.ActionType.SORT_HOME_FURNITURE_BY_DESCENDING_ORDER, 
-        this.home.getFurnitureSortedProperty() != null);
-    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_CATALOG_ID, true); 
-    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_NAME, true); 
-    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_WIDTH, true); 
-    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_DEPTH, true); 
-    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_HEIGHT, true); 
-    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_X, true); 
-    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_Y, true); 
-    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_ELEVATION, true); 
-    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_ANGLE, true); 
-    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_LEVEL, true); 
-    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_COLOR, true); 
-    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_TEXTURE, true); 
-    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_MOVABLE, true); 
-    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_DOOR_OR_WINDOW, true); 
+    homeView.setEnabled(HomeView.ActionType.SORT_HOME_FURNITURE_BY_DESCENDING_ORDER,
+            this.home.getFurnitureSortedProperty() != null);
+    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_CATALOG_ID, true);
+    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_NAME, true);
+    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_WIDTH, true);
+    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_DEPTH, true);
+    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_HEIGHT, true);
+    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_VOLUME, true);
+    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_X, true);
+    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_Y, true);
+    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_ELEVATION, true);
+    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_ANGLE, true);
+    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_LEVEL, true);
+    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_COLOR, true);
+    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_TEXTURE, true);
+    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_MOVABLE, true);
+    homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_DOOR_OR_WINDOW, true);
     homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_VISIBLE, true);
     homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_PRICE, true);
     homeView.setEnabled(HomeView.ActionType.DISPLAY_HOME_FURNITURE_VALUE_ADDED_TAX_PERCENTAGE, true);
@@ -299,8 +304,8 @@ public class HomeController implements Controller {
     homeView.setEnabled(HomeView.ActionType.MODIFY_COMPASS, true);
     Level selectedLevel = this.home.getSelectedLevel();
     enableBackgroungImageActions(homeView, selectedLevel != null
-        ? selectedLevel.getBackgroundImage()
-        : this.home.getBackgroundImage());
+            ? selectedLevel.getBackgroundImage()
+            : this.home.getBackgroundImage());
     homeView.setEnabled(HomeView.ActionType.ADD_LEVEL, true);
     homeView.setEnabled(HomeView.ActionType.ADD_LEVEL_AT_SAME_ELEVATION, true);
     List<Level> levels = this.home.getLevels();
@@ -312,7 +317,7 @@ public class HomeController implements Controller {
     homeView.setEnabled(HomeView.ActionType.DELETE_LEVEL, homeContainsOneSelectedLevel);
     homeView.setEnabled(HomeView.ActionType.ZOOM_IN, true);
     homeView.setEnabled(HomeView.ActionType.ZOOM_OUT, true);
-    homeView.setEnabled(HomeView.ActionType.EXPORT_TO_SVG, true); 
+    homeView.setEnabled(HomeView.ActionType.EXPORT_TO_SVG, true);
     homeView.setEnabled(HomeView.ActionType.VIEW_FROM_TOP, true);
     homeView.setEnabled(HomeView.ActionType.VIEW_FROM_OBSERVER, true);
     homeView.setEnabled(HomeView.ActionType.MODIFY_OBSERVER, this.home.getCamera() == this.home.getObserverCamera());
@@ -334,7 +339,6 @@ public class HomeController implements Controller {
     enableCreationToolsActions(homeView);
     homeView.setTransferEnabled(true);
   }
-
   /**
    * Enables plan actions depending on the selected level is viewable or not.
    */
